@@ -97,7 +97,7 @@ const Home: React.FC = () => {
 			templateAreas="
 			'. . . .'
 			'. a b .'
-			'. ad ad .'
+			'. . . .'
 		"
 			justifyContent="center"
 			alignItems="center"
@@ -511,16 +511,6 @@ const Home: React.FC = () => {
 						</Tooltip>
 					</Flex>
 				</Grid>
-			</Flex>
-			<Flex gridArea="ad" flexDir="column" padding="1rem 1rem" margin="1rem 1rem">
-				<div className="ad">
-					<ins
-						className="adsbygoogle"
-						style={{ display: 'block' }}
-						data-ad-client="ca-pub-2679409580842633"
-						data-ad-format="auto"
-					/>
-				</div>
 			</Flex>
 		</Grid>
 	)
