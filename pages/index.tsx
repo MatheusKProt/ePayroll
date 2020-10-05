@@ -17,7 +17,6 @@ import {
 	ModalHeader,
 	ModalOverlay,
 	NumberInput,
-	SlideIn,
 	Slider,
 	SliderFilledTrack,
 	SliderThumb,
@@ -158,67 +157,63 @@ const Home: React.FC = () => {
 						<SliderThumb />
 					</Slider>
 
-					<SlideIn in={isOpen}>
-						{styles => (
-							<Modal onClose={onClose} size="md" isOpen={isOpen} isCentered>
-								<ModalOverlay opacity={styles.opacity} />
-								<ModalContent bg="gray.600" {...styles} borderRadius="0.5rem">
-									<ModalHeader>Configurações</ModalHeader>
-									<ModalCloseButton />
-									<ModalBody>
-										<FormLabel>Tarifa INSS</FormLabel>
-										<NumberInput
-											min={1}
-											max={100}
-											precision={2}
-											value={inss}
-											onChange={handleChangeINSS}
-											marginBottom="1rem"
-										/>
-										<Slider
-											min={1}
-											max={100}
-											step={0.5}
-											value={inss}
-											onChange={handleChangeINSS}
-											marginBottom="1rem"
-										>
-											<SliderTrack />
-											<SliderFilledTrack bg="green.500" />
-											<SliderThumb />
-										</Slider>
+					<Modal onClose={onClose} size="md" isOpen={isOpen} isCentered>
+						<ModalOverlay />
+						<ModalContent bg="gray.600" borderRadius="0.5rem">
+							<ModalHeader>Configurações</ModalHeader>
+							<ModalCloseButton />
+							<ModalBody>
+								<FormLabel>Tarifa INSS</FormLabel>
+								<NumberInput
+									min={1}
+									max={100}
+									precision={2}
+									value={inss}
+									onChange={handleChangeINSS}
+									marginBottom="1rem"
+								/>
+								<Slider
+									min={1}
+									max={100}
+									step={0.5}
+									value={inss}
+									onChange={handleChangeINSS}
+									marginBottom="1rem"
+								>
+									<SliderTrack />
+									<SliderFilledTrack bg="green.500" />
+									<SliderThumb />
+								</Slider>
 
-										<FormLabel>Tarifa INSS</FormLabel>
-										<NumberInput
-											min={1}
-											max={100}
-											precision={2}
-											value={fgts}
-											onChange={handleChangeFGTS}
-											marginBottom="1rem"
-										/>
-										<Slider min={1} max={100} step={0.5} value={fgts} onChange={handleChangeFGTS}>
-											<SliderTrack />
-											<SliderFilledTrack bg="green.500" />
-											<SliderThumb />
-										</Slider>
-									</ModalBody>
-									<ModalFooter>
-										<Button
-											onClick={() => {
-												setINSS(27.8)
-												setFGTS(8)
-											}}
-											marginRight="1rem"
-										>
-											Redefinir
-										</Button>
-										<Button onClick={onClose}>Cancelar</Button>
-									</ModalFooter>
-								</ModalContent>
-							</Modal>
-						)}
-					</SlideIn>
+								<FormLabel>Tarifa INSS</FormLabel>
+								<NumberInput
+									min={1}
+									max={100}
+									precision={2}
+									value={fgts}
+									onChange={handleChangeFGTS}
+									marginBottom="1rem"
+								/>
+								<Slider min={1} max={100} step={0.5} value={fgts} onChange={handleChangeFGTS}>
+									<SliderTrack />
+									<SliderFilledTrack bg="green.500" />
+									<SliderThumb />
+								</Slider>
+							</ModalBody>
+							<ModalFooter>
+								<Button
+									onClick={() => {
+										setINSS(27.8)
+										setFGTS(8)
+									}}
+									marginRight="1rem"
+								>
+									Redefinir
+								</Button>
+								<Button onClick={onClose}>Cancelar</Button>
+							</ModalFooter>
+						</ModalContent>
+					</Modal>
 
 					<Box>
 						<Button
