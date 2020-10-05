@@ -185,7 +185,7 @@ const Home: React.FC = () => {
 									<SliderThumb />
 								</Slider>
 
-								<FormLabel>Tarifa INSS</FormLabel>
+								<FormLabel>Tarifa FGTS</FormLabel>
 								<NumberInput
 									min={1}
 									max={100}
